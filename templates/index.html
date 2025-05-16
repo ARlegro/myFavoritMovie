@@ -294,27 +294,30 @@
         // }
 
         let cardContentHtml = /*html*/ `
-                      <div class="row">
-                        <div class="columns">
-                          <div class="column is-4">
-                            <figure class="image">
-                              <img
-                                src=${posterUrl}
-                                alt="Movie Poster"
-                              />
-                            </figure>
-                          </div>
-                          <div class="column is-8">
-                            <p class="title">${title}</p>
-                            <span class="icon-text">
-                              <span class="icon">
-                                <i class="fas fa-thumbs-up" style="color: red"></i>
-                              </span>
-                              <span>${likes}</span>
-                            </span>
-                            <p class="text">누적 관객수: ${viewers.toLocaleString()}</p>
-                            <p class="text">개봉일: ${openYear}.${openMonth}.${openDay}</p>
-                          </div>
+                        <div class="row">
+                          <article class="media">
+                            <div class="columns is-mobile is-vcentered">
+                              <figure class="media-left column is-4">
+                                <p class="iamge">
+                                  <img
+                                    src="${posterUrl}"
+                                    alt="Movie Poster"
+                                  />
+                                </p>
+                              </figure>
+                              <div class="medi-content column is-8">
+                                <p class="title">${title}</p>
+                                <span class="icon-text">
+                                  <span class="icon">
+                                    <i class="fas fa-thumbs-up" style="color: red"></i>
+                                  </span>
+                                  <span>${likes}</span>
+                                </span>
+                                <p class="text">누적 관객수: ${viewers.toLocaleString()}</p>
+                                <p class="text">개봉일: ${openYear}.${openMonth}.${openDay}</p>
+                              </div>
+                            </div>
+                          </article>
                         </div>`;
 
         let cartFooterHtml = "";
@@ -322,7 +325,7 @@
         if (trashMode) {
           cartFooterHtml = /*html*/ `       
                       <div class="row">
-                        <div id="card-btn" class="columns">
+                        <div id="card-btn" class="columns is-mobile">
                           <div class="column is-6 has-text-centered">
                             <a
                               id="restore-btn"
@@ -344,7 +347,7 @@
         } else {
           cartFooterHtml = /*html*/ `       
                       <div class="row">
-                        <div id="card-btn" class="columns">
+                        <div id="card-btn" class="columns is-mobile is-vcentered">
                           <div class="column is-6 has-text-centered">
                             <a
                               id="like-btn"
