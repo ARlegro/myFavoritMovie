@@ -2,7 +2,7 @@ services:
   my-server:
     build: .
     volumes:
-      - movie-data:/app
+      - movie-data:/app/data
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pwd1234
