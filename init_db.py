@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import re
 import random
 
-client = MongoClient("mongodb://root:pwd1234@my-db:27018")
+client = MongoClient("mongodb://root:pwd1234@my-db:27017/favorite?authSource=admin")
 db = client.favoriteMovie
 
 

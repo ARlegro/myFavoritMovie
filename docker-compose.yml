@@ -3,24 +3,21 @@ services:
     build: .
     volumes:
       - movie-data:/app/data
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=pwd1234
     ports:
       - "80:5000"
     depends_on:
       my-db:
         condition: service_healthy
   my-db:
-    image: mongo:latest
+    image: mongo
     container_name: my-db
     ports:
       - "27018:27017"
     volumes:
       - mongo-data:/data/db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=pwd1234
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pwd1234
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 5s

@@ -7,7 +7,7 @@ from bson import ObjectId
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb://root:pwd1234@my-db:27018")
+client = MongoClient("mongodb://root:pwd1234@my-db:27017/favorite?authSource=admin")
 db = client.favoriteMovie
 
 
